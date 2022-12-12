@@ -9,3 +9,16 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+When we look at the deterministicPartitionKey it has these below conditions
+
+1. Update the input's participant key to to cnadidiate and if it's not og type string convert it to be as a string
+   2)Is the particpant key is not there hash the input th at we receive
+   3)If the has value is greater than MAX_PARTITION_KEY_LENGTH return the new has data,
+
+Before the code recaftor we had so many if else cases.
+Now this has been reffactored to have one if else and couple of terary opeartor to determine the desired result.
+
+We have added two utility method checkForValidString & createHashForData for resueability
+
+The test case has also been updated
